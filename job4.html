@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>黄_0624_job3</title>
+    <style>
+        /* 页面整体：背景渐变 + 居中布局（用 text-align 和 inline-block，不用 margin/padding/border） */
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background: linear-gradient(135deg, #f6ede3, #fdf7f1);
+            color: #3b3025;
+            text-align: center;
+        }
+
+        /* 主内容“卡片”区域，用 box-shadow 制造层次感，不用 border/padding/margin */
+        .page {
+            display: inline-block;
+            background-color: #FFE6EE;
+            box-shadow: 0 0 30px rgba(80, 58, 35, 0.25);
+            text-align: left;
+            max-width: 720px;
+        }
+
+        /* 群组选择器：统一标题的颜色与字间距 */
+        h1, h2, h3, h4, h5, h6 {
+            color: #5b4636;
+            letter-spacing: 1px;
+        }
+
+        /* 类选择器：居中与右对齐 */
+        .center {
+            text-align: center;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        /* 只作用在 p 标签、id 为 intro */
+        /* 说明：p#intro 只匹配 <p id="intro">，不会影响 <h2 id="intro"> */
+        p#intro {
+            font-size: 140%;
+            font-weight: bold;
+            color: #c8493b;
+        }
+
+        /* 活动介绍的普通段落：通过行高与字间距来增强视觉舒适度（不用 padding/margin） */
+        .intro-text {
+            line-height: 1.7;
+            letter-spacing: 0.5px;
+        }
+
+        /* 表格所在区域标题 */
+        .section-title {
+            text-align: center;
+        }
+
+        /* 表格基础样式：用背景色和行高区分层次，不用 border/padding/margin */
+        table {
+            width: 100%;
+            background-color: #fde5f9;
+            font-size: 90%;
+        }
+
+        th {
+            background-color: #f2c2d3;
+            font-weight: bold;
+            text-align: left;
+            line-height: 2.2;
+        }
+
+        td {
+            line-height: 2.0;
+        }
+
+        /* 斑马纹行效果，让表格更易读 */
+        table tr:nth-child(even) {
+            background-color: #fbdef9;
+        }
+
+        /* 鼠标移入整行高亮显示 */
+        table tr:hover {
+            background-color: #dfbeee;
+        }
+
+        /* 后代选择器：div 里的 table 里的 a
+           只突出显示报名名单中的名字链接，不影响其他链接 */
+        div table a {
+            font-weight: bold;
+            font-size: 110%;
+            color: #8b3030;
+        }
+
+        /* 全局链接伪类样式 */
+        a:link {
+            color: #b6553b;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #7a7b52;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #e36a4c;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #3c4f9f;
+            text-decoration: underline;
+        }
+
+        /* 带类名的链接：重点与次要链接 */
+        a.red:link {
+            color: #e25b3d;
+        }
+
+        a.red:active {
+            color: #3046a1;
+        }
+
+        a.blue:link {
+            color: #4b7f60;
+        }
+
+        a.blue:active {
+            color: #a53aa4;
+        }
+
+        /* 段落首字放大 + 特别颜色，营造杂志风排版感 */
+        p::first-letter {
+            font-size: 180%;
+            color: #c45b3f;
+        }
+
+        /* div 的第一行高亮
+           底部公告区的第一行会格外醒目，其他 div 第一行也会略微强调 */
+        div::first-line {
+            color: #b04832;
+            font-weight: bold;
+        }
+
+        /* 底部公告文字略小，让层次更清晰 */
+        .notice {
+            font-size: 90%;
+            line-height: 1.6;
+        }
+
+        /* 小分隔线：用背景渐变模拟，无 border */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, rgba(91,70,54,0), rgba(91,70,54,0.6), rgba(91,70,54,0));
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- 顶部标题区 -->
+    <h1 class="center">轻音乐阅读夜 · Soft Music Reading</h1>
+
+    <div class="divider"></div><br>
+
+    <!-- 活动介绍区 -->
+    <div>
+        <!-- 这个 h2 使用 id="intro"，但样式只写了 p#intro，所以它显示为普通 h2 -->
+        <h2 id="intro" class="center">本周主题：慢读时光，让轻音乐与书页共赴静谧之约。</h2>
+
+        <p class="intro-text right">
+            当城市的喧嚣渐次褪去，当夜色裹着温柔降临，我们想邀你赴一场与文字、与旋律的静谧之约。
+        </p>
+
+        <p class="intro-text center">
+            现场提供免费柠檬水、花草茶与小份无声音小点心（如饼干、坚果），避免干扰阅读。
+            参与者签到后领取定制书签（印活动主题与温柔短句），可在 “心愿便签” 上写下当晚的阅读期许（如 “希望遇见一段温暖的文字”），贴在活动墙。
+        </p>
+
+        <!-- 这个 p 使用 id="intro"，会被 p#intro 高亮处理 -->
+        <p id="intro">
+            本次交流席位有限，报名成功后以短信确认为准，请务必留下可联系的手机号。
+        </p>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+    <!-- 活动报名情况表格区 -->
+    <div>
+        <h3 class="section-title">活动名单</h3>
+
+        <table>
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>联系方式</th>
+                <th>阅读状态</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td><a href="01.png">张三</a></td>
+                <td>138****0001</td>
+                <td>专注中</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td><a href="02.png">李四</a></td>
+                <td>139****0002</td>
+                <td>松弛中</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>王五</td>
+                <td>137****0003</td>
+                <td>聆听中</td>
+            </tr>
+        </table>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+    <!-- 页面链接区：这里的链接样式不会被 div table a 放大字号，因为不在 table 里 -->
+    <div class="center">
+        <p>
+            <a class="red" href="https://hongchenwusdnu.github.io/bookstore/job4.html">查看往期活动照片</a><br>
+            <a class="blue" href="https://huangjianbin666.github.io/job3/job3.html">在线咨询活动详情</a>
+        </p>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+    <!-- 底部公告区：第一行被 div::first-line 强调 -->
+    <div class="notice">
+        城市书店地址：「梧桐巷 12 号 拾光书社」（近 3 号线文艺路地铁站 C 口步行 5 分钟）。<br>
+        营业时间：这场温柔的阅读之约，将在「19:30-21:30」准时开启。<br>
+        温馨提醒：建议你提前 15 分钟抵达，慢慢适应这里的安静氛围，挑选心仪的座位，喝一杯温热的茶；
+        活动将在 21:30 温柔收尾，不必匆忙离场，可伴着音乐缓缓整理心情，带着满格的治愈感踏上归途。
+        若临时无法赴约，记得提前告知我们呀～
+    </div>
+
+    <br>
+
+</div>
+
+</body>
+</html>
